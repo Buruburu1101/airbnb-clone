@@ -10,6 +10,17 @@ class App extends React.Component {
       flats:[]
     };
   }
+
+  componentDidMount() {
+    const url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json";
+    fetch(url) // AJAX
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          flats:data
+        });
+      })
+  }
   render() {
     return (
       <div className='app'>
