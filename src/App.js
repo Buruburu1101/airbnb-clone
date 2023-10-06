@@ -5,6 +5,7 @@ import Flat from './components/flat';
 // import { compose, withProps } from "recompose"
 // import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import GoogleMapReact from 'google-map-react';
+import Marker from './components/marker';
 
 
 class App extends React.Component {
@@ -69,6 +70,10 @@ class App extends React.Component {
             center={center}
             zoom={14}>
           </GoogleMapReact>
+
+            {this.state.flats.map((flat) => {
+              return <Marker lat={flat.lat} lng={flat.lng} text={flat.price}/>
+            })}
         </div>
       </div>
     );
