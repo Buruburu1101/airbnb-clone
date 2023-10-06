@@ -2,8 +2,9 @@
 import React from 'react';
 import './App.css';
 import Flat from './components/flat';
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+// import { compose, withProps } from "recompose"
+// import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import GoogleMapReact from 'google-map-react';
 
 
 class App extends React.Component {
@@ -31,9 +32,10 @@ class App extends React.Component {
       lng: 2.3522
     };
 
+    /*
     const MyMapComponent = compose(
       withProps({
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `400px` }} />,
         mapElement: <div style={{ height: `100%` }} />,
@@ -48,6 +50,8 @@ class App extends React.Component {
         {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
       </GoogleMap>
     );
+    */
+
 
     return (
       <div className='app'>
@@ -61,7 +65,10 @@ class App extends React.Component {
           </div>
         </div>
         <div className='map'>
-        <MyMapComponent isMarkerShown/>
+        <GoogleMapReact
+            center={center}
+            zoom={14}>
+          </GoogleMapReact>
         </div>
       </div>
     );
