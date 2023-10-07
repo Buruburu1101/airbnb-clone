@@ -4,7 +4,7 @@ import "./marker.css";
 class Marker extends React.Component {
   render() {
     return (
-      <div className="maker">
+      <div className="marker">
         {this.props.text}
       </div>
     );

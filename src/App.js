@@ -69,11 +69,10 @@ class App extends React.Component {
         <GoogleMapReact
             center={center}
             zoom={14}>
-          </GoogleMapReact>
-
-            {this.state.flats.map((flat) => {
+              {this.state.flats.map((flat) => {
               return <Marker lat={flat.lat} lng={flat.lng} text={flat.price}/>
             })}
+          </GoogleMapReact>
         </div>
       </div>
     );
