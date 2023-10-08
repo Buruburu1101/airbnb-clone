@@ -26,9 +26,9 @@ class App extends React.Component {
         });
       })
 
-      selectFlat = (flat) => {
+      function selectFlat(flat){
         console.log(flat);
-      }
+      };
   }
   render() {
 
