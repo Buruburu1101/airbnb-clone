@@ -12,7 +12,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      flats:[]
+      flats:[],
+      selectedFlat:null
     };
   }
 
@@ -25,11 +26,13 @@ class App extends React.Component {
           flats:data
         });
       })
-
-      function selectFlat(flat){
-        console.log(flat);
-      };
   }
+
+  selectFlat=(flat) => {
+    this.setState({
+      selectedFlat: flat
+    })
+  };
   render() {
 
 
