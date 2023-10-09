@@ -21,6 +21,11 @@
   align-content: flex-start;
 }
 
+.search {
+  padding: 10px;
+  margin-right: 5px;
+}
+
 .search input {
   width: 100%;
   height:40px;

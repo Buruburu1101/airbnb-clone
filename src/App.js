@@ -13,7 +13,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       flats:[],
-      selectedFlat:null
+      selectedFlat:null,
+      search:""
     };
   }
 
@@ -34,6 +35,13 @@ class App extends React.Component {
     })
     console.log(flat);
   };
+
+  handleSearch =(event) =>{
+    this.setState({
+      search: event.target.value,
+      flats:this.state.flats.filter((flat) => new RegExp(event.target.value, "i").exec(flat.name))
+    });
+  }
   render() {
 
 
