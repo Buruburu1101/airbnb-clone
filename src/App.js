@@ -32,6 +32,7 @@ class App extends React.Component {
     this.setState({
       selectedFlat: flat
     })
+    console.log(flat);
   };
   render() {
 
@@ -73,6 +74,11 @@ class App extends React.Component {
       <div className='app'>
         <div className='main'>
           <div className='search'>
+            <input
+              type='text'
+              placeholder='Search...'
+              value={this.state.search}
+              onChange={this.handleSearch} />
           </div>
           <div className='flats'>
             {this.state.flats.map((flat) => {
