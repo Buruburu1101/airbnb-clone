@@ -9,7 +9,7 @@ class Marker extends React.Component {
     }
     return (
       <div className={classes}>
-        {this.props.text}$
+        {this.props.price}$
       </div>
     );
   }

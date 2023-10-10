@@ -26,7 +26,8 @@ class App extends React.Component {
       .then((data) => {
         this.setState({
           flats:data,
-          allFlats:data
+          allFlats:data,
+          selectedFlat: data[0]
         });
       })
   }
@@ -45,8 +46,6 @@ class App extends React.Component {
     });
   }
   render() {
-
-
     let center = {
       lat: 48.8566,
       lng: 2.3522
@@ -108,7 +107,7 @@ class App extends React.Component {
               key={flat.name}
               lat={flat.lat}
               lng={flat.lng}
-              text={flat.price}
+              price={flat.price}
               selected={flat === this.state.selectedFlat}/>
             })}
           </GoogleMapReact>
